@@ -6,9 +6,7 @@ namespace MealUP.ModelRequest
 {
     public class RecipeRequest
     {
-        [Required]
-        public int Id { get; set; }
-
+       
         [Required]
         public string Name { get; set; }
 
@@ -24,18 +22,11 @@ namespace MealUP.ModelRequest
         public CookingMethod Cooking_Method { get; set; }
 
         [Required]
-        public List<int>  StepNo { get; set; }
-        [Required]
-        public List<string> Description { get; set; }
+        public Dictionary<int, string> Instructions { get; set; }
+
 
         [Required]
-        public List<string>  IngredientsName { get; set; }
-        [Required]
-        public List<int> quantityValue { get; set; }
-
-        [Required]
-        public List<MeasuringUnits> units { get; set; }
-
+        public List<QuantityResquest> QuntityIngredients { get; set; }
 
 
 

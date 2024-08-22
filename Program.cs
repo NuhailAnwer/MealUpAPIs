@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MealUP.Data;
-
+using MealUP.Interfaces;
+using MealUP.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Services.AddDbContext<MealUpContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("MealUpDB"));
 });
 
+builder.Services.AddScoped<IRecipeRespository,RecipeRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
